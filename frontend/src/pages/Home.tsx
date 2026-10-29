@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const navigate = useNavigate();
   return (
     <section className="home">
       <nav>
-        <a href="/" className="logo">Website</a>
+        <Link to="/" className="logo">Website</Link>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <a href="/auth" className="nav-link">Log In / Sign Up</a>
-          <a href="/lab" className="nav-link">Security Lab</a>
+          <Link to="/auth" className="nav-link">Log In / Sign Up</Link>
+          <Link to="/lab" className="nav-link">Security Lab</Link>
         </div>
       </nav>
       <header className="hero">

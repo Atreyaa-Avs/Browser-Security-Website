@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const BACKEND_NODE     = 'http://localhost:3000';   // npm run dev  (in-memory, no real SQL)
 const BACKEND_WRANGLER = 'http://localhost:8787';   // wrangler dev (real D1 SQL engine)
@@ -34,19 +35,22 @@ export default function Lab() {
     }
   }
 
+  const backendStatus =
+    API === BACKEND_WRANGLER || API.includes('workers.dev')
+      ? { text: '✅ Connected to Cloudflare Worker / D1 SQL (SQLi active)', color: '#16a34a' }
+      : { text: '⚠️ Connected to local Node.js dev (in-memory JS — simulated)', color: '#d97706' };
+
   return (
     <section className="lab">
       <nav>
-        <a href="/" className="logo">Website</a>
-        <a href="/" className="nav-link">Home</a>
+        <Link to="/" className="logo">Website</Link>
+        <Link to="/" className="nav-link">Home</Link>
       </nav>
       <header className="hero">
         <h1>Security Lab</h1>
-        <p>Deliberately vulnerable endpoints served by the Hono backend (localhost:3000).</p>
-        <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: API === BACKEND_WRANGLER ? '#16a34a' : '#d97706', fontWeight: 600 }}>
-          {API === BACKEND_WRANGLER
-            ? '✅ Connected to wrangler dev (real D1 SQL — SQLi works)'
-            : '⚠️ Connected to Node.js dev (in-memory JS — SQLi is simulated only)'}
+        <p>Deliberately vulnerable endpoints served by the backend.</p>
+        <p style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: backendStatus.color, fontWeight: 600 }}>
+          {backendStatus.text}
         </p>
       </header>
       <main className="lab-body">

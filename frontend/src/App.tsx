@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Content from './pages/Content';
@@ -11,7 +11,10 @@ export default function App() {
       <Route path="/auth" element={<Auth />} />
       <Route path="/content" element={<Content />} />
       <Route path="/lab" element={<Lab />} />
+      {/* Fallback route for unknown URLs */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
+
 

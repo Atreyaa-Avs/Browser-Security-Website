@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Auth() {
   const [tab, setTab] = useState<'login' | 'signup'>('login');
@@ -8,8 +8,8 @@ export default function Auth() {
   return (
     <section className="auth">
       <nav>
-        <a href="/" className="logo">Website</a>
-        <a href="/" className="nav-link">Home</a>
+        <Link to="/" className="logo">Website</Link>
+        <Link to="/" className="nav-link">Home</Link>
       </nav>
       <div className="auth-card">
         <div className="auth-tabs">
