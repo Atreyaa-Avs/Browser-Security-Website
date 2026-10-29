@@ -1,0 +1,16 @@
+# wrangler.toml - Cloudflare Workers deployment config
+# Local development (Node.js): npm run dev  (in-memory fallback)
+# Cloudflare local D1:        wrangler dev
+# Cloudflare deploy:          wrangler deploy
+
+name = "vulnerable-backend"
+compatibility_date = "2026-10-26"
+main = "src/index.ts"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "web-security-agent-db"
+database_id = "93fa47f8-9f2b-4c85-9bf4-31db43725bfb"
+
+[observability]
+enabled = true

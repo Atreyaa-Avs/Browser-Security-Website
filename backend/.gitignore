@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Wrangler local state (D1, KV, R2, cache — all local-only)
+.wrangler/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.local
+
+# TypeScript cache
+*.tsbuildinfo
+
