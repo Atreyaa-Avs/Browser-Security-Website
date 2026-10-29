@@ -9,8 +9,8 @@ main = "src/index.ts"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "web-security-agent-db"
-database_id = "93fa47f8-9f2b-4c85-9bf4-31db43725bfb"
+database_name = "browser-security-website-db"
+database_id = "b1de53c4-1415-4a5b-8a3f-ba5c459f0edb"
 
 [observability]
 enabled = true
