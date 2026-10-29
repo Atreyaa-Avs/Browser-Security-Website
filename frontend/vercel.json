@@ -1,6 +1,26 @@
 {
   "rewrites": [
     {
+      "source": "/search",
+      "destination": "https://browser-security-website.atreyaaavs.workers.dev/search"
+    },
+    {
+      "source": "/login",
+      "destination": "https://browser-security-website.atreyaaavs.workers.dev/login"
+    },
+    {
+      "source": "/profile/:path*",
+      "destination": "https://browser-security-website.atreyaaavs.workers.dev/profile/:path*"
+    },
+    {
+      "source": "/headers",
+      "destination": "https://browser-security-website.atreyaaavs.workers.dev/headers"
+    },
+    {
+      "source": "/session",
+      "destination": "https://browser-security-website.atreyaaavs.workers.dev/session"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
