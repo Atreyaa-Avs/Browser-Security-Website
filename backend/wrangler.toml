@@ -3,7 +3,7 @@
 # Cloudflare local D1:        wrangler dev
 # Cloudflare deploy:          wrangler deploy
 
-name = "vulnerable-backend"
+name = "browser-security-website"
 compatibility_date = "2026-10-26"
 main = "src/index.ts"
 
